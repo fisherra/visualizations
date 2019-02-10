@@ -1,0 +1,53 @@
+---
+title: "Base R Pie Chart"
+output: html_document
+---
+
+## pie chart
+
+data - 
+```{r}
+amount <- c(9, 12.4, 15, 8)
+group <- c("User 1", "User 2", "User 3", "User 4")
+pie_col <- c('slateblue', 'dodgerblue1', 'turquoise','seagreen')
+```
+
+
+
+### basic pie 
+
+```{r}
+pie(amount,
+    group, 
+    col = pie_col)
+```
+
+<br>
+
+### pie with sample size annotation
+
+```{r}
+group <- paste(group, 'n =', amount)
+
+pie(amount,
+    group, 
+    col = pie_col)
+```
+
+
+<br> 
+
+### pie with percent annotations
+
+```{r}
+percent <- round(amount/sum(amount)*100)
+group <- paste(group, percent)
+group <- paste(group, '%', sep = '')
+
+
+pie(amount,
+    group, 
+    clockwise = F,
+    col = pie_col)
+```
+

@@ -1,0 +1,47 @@
+---
+title: "Base R Histograms"
+output: html_document
+---
+
+data
+```{r}
+set.seed(321)
+x <- rnorm(100,50,5)
+```
+
+<br>
+
+## Normal Histogram
+
+```{r}
+hist(x)
+?hist
+```
+
+<br> 
+
+## Frequency Histogram
+
+```{r}
+hist(x, freq = T)
+```
+
+<br>
+
+## With probability curve
+```{r}
+hist(x, probability = T)
+
+curve(dnorm(x, 50, 5), 
+      col = 'firebrick',
+      add = T)
+```
+
+<br> 
+
+## Breaks
+
+```{r}
+hist(x, breaks = 20)
+```
+

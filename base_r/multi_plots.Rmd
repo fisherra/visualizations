@@ -1,0 +1,35 @@
+---
+title: "Base R Multi Plots"
+output: html_document
+---
+
+## side by side
+```{r}
+par(mfrow = c(1,2))
+plot(1:5, rep(5,5))
+plot(rep(5,5), 1:5)
+```
+
+<br>
+
+## on top of each other
+
+```{r}
+par(mfrow = c(2,1))
+hist(rnorm(10,5,1))
+hist(rnorm(10,5,5))
+```
+
+<br>
+
+### many plots
+
+```{r}
+pairs(iris)
+```
+
+
+
+
+
+

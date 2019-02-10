@@ -1,0 +1,43 @@
+---
+title: "Base R Scatterplots"
+output: html_document
+---
+
+Data - 
+
+```{r}
+x <- seq(1, 100, by = 2)
+y <- 1 + 2*x + rnorm(50,0,10)
+```
+
+<br> 
+
+
+```{r}
+plot(x,y)
+```
+
+<br>
+ 
+or
+
+```{r}
+plot(y ~ x)
+```
+
+<br> 
+
+Options- 
+
+```{r}
+plot(1:20,
+     col = 1:20,
+     pch = 1:20,
+     )
+```
+
+<br>
+
+
+
+

@@ -1,0 +1,40 @@
+---
+title: "Base R Line Chart"
+output: html_document
+---
+
+
+```{r}
+x <- seq(1, 100, by = 2)
+y <- 1 + 2*x + rnorm(50,0,10)
+```
+
+<br> 
+
+
+```{r}
+plot(x, y, 
+     type = 'l')
+```
+
+
+or 
+
+```{r}
+plot(y ~ x, type = 'l')
+```
+
+
+### scatter with lines
+```{r}
+plot(x, y, 
+     type = 'b')
+```
+
+or
+
+```{r}
+plot(x,y,
+     type = 'o')
+```
+

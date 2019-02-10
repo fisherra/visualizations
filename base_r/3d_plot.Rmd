@@ -1,0 +1,46 @@
+---
+title: "Base R 3D Plots"
+output: html_document
+---
+
+## create 3d data using outer function
+
+```{r}
+x <- 1:10
+y <- 1:10
+
+f <- outer(x, y, function(x,y) log(x)/1 + sin(x+y))
+```
+
+<br>
+
+## draw contour plot
+
+useful for gradient descent
+
+```{r}
+contour(x, y, f, nlevels = 25)
+```
+
+<br>
+
+## image plot 
+
+like a heatmap
+
+```{r}
+image(x,y,f)
+```
+
+
+<br>
+
+### 3d perspective plot
+
+
+```{r}
+persp(x,y,f,
+      theta = 230,
+      phi = 45, 
+      col = 'firebrick')
+```

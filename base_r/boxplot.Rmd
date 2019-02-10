@@ -1,0 +1,48 @@
+---
+title: "Base R Boxplots"
+output: html_document
+---
+
+```{r}
+x <- rnorm(40, 5, 2)
+y <- rnorm(40, 7, 5)
+z <- rnorm(40, 3, 3)
+```
+
+
+
+## normal
+
+```{r}
+boxplot(x,y,z)
+```
+
+
+
+```{r}
+boxplot(x,y,z,
+        horizontal = T)
+```
+
+
+<br> 
+
+### notched boxplot
+
+```{r}
+boxplot(x,y,z,
+        notch = T, 
+        col = c('firebrick', 'slateblue', 'turquoise'))
+```
+
+<br>
+
+### violin plot 
+```{r}
+library('vioplot')
+
+vioplot(x,y,z, col = 'firebrick', 
+        horizontal = T)
+
+```
+

@@ -1,0 +1,42 @@
+---
+title: "Base R Attributes via Factors"
+output: html_document
+---
+
+```{r}
+example <- data.frame(
+  gender = c('F', 'F', 'M', 'F', 'M', 'F', 'M', 'F'),
+  x_val = 1:8,
+  y_val = c(5, 6, 12, 4, 11, 4, 15, 6)
+  )
+```
+
+<br>
+
+
+### color by factor
+
+First set factor, then multiply pallete by factor. 
+
+```{r}
+gender <- as.factor(example$gender)
+
+plot(example$x_val, 
+     example$y_val,
+     col = c('red', 'blue')[gender],
+     pch = 19
+)
+```
+
+<br>
+
+### knows to create a boxplot
+
+If you try to plot by a factor, it knows to create a boxplot. 
+
+```{r}
+plot(example$y_val ~ example$gender,
+        col = c('red', 'blue'))
+```
+
+

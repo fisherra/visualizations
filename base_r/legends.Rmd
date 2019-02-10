@@ -1,0 +1,63 @@
+---
+title: "Base R Legends"
+output: html_document
+---
+
+### generic legend
+
+```{r}
+plot(1:3)
+
+legend('topleft',
+       inset = 0.05,
+       title = 'point legend',
+       legend = c('type 1', 'type 2'),
+       pch = 19,
+       col = c('blue', 'red'))
+```
+
+<br>
+
+
+### legend outside of plot
+
+bottom, left, top, right
+```{r}
+
+par(xpd = T, mar = par()$mar + c(0,0,0,7))
+
+plot(1:3, type = 'l')
+
+legend('right',
+       inset = c(-.3, 0),
+       title = 'line legend',
+       legend = c('type 1', 'type 2'),
+       lty = c(1,2),
+       lwd = c(1,2),
+       bg = 'gray',
+       col = c('blue', 'red'))
+```
+
+<br> 
+
+### no box around legend
+
+```{r}
+set.seed(2)
+barplot(rnorm(10,5,2),
+        names.arg = 1:10,
+        col = c(rep('red', 3), 'blue', rep('gray', 3), rep('blue', 3)))
+
+legend('top',
+       title = 'bar chart legend',
+       legend = c('A', 'B', 'C'),
+       fill = c('red', 'blue', 'gray'),
+       cex = 1.2,
+       bty = 'n')
+
+?legend
+```
+
+
+       
+       

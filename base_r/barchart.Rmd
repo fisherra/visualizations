@@ -1,0 +1,61 @@
+---
+title: "Base R Bar Charts"
+output: html_document
+---
+
+### plotting a categorical histogram
+
+```{r}
+data <- c('a', 'a', 'b', 'a', 'c', 'c')
+barplot(table(data))
+```
+
+<br>
+
+### plotting an overturned histogram
+
+```{r}
+barplot(table(data), horiz = T)
+```
+
+<br>
+
+### plotting a vector
+
+```{r}
+data <- c(3, 25, 13, 8)
+name <- c('a', 'b', 'c', 'd')
+barplot(data, names.arg = name)
+```
+
+<br>
+
+### plotting a dataframe stacked
+
+```{r}
+data <- data.frame(a = c(3, 25, 13, 8),
+                   b = c(5, 22, 18, 5),
+                   c = c(7, 29, 10, 11),
+                   d = c(10, 19, 15, 8))
+
+barplot(as.matrix(data),
+        names.arg = colnames(data)
+        )
+```
+
+
+<br> 
+
+### plotting a dataframe beside
+
+```{r}
+barplot(as.matrix(data),
+        names.arg = colnames(data),
+        beside = T
+        )
+```
+
+
+<br> 
+
+
